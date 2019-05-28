@@ -58,11 +58,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SampleClass.cs" />
+    <Compile Include="Tests\SampleClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\" />
+    <Folder Include="Steps\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
