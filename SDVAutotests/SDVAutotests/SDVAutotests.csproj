@@ -49,6 +49,10 @@
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -63,8 +67,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Pages\NBCHeader.cs" />
-    <Compile Include="Tests\SampleClass.cs" />
+    <Compile Include="Pages\MainNBCPage.cs" />
+    <Compile Include="Pages\Page.cs" />
+    <Compile Include="Pages\ShowsPage.cs" />
+    <Compile Include="Tests\ShowsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
