@@ -27,10 +27,10 @@ namespace SDVAutotests.Pages
             return this;
         }
 
-        public ShowsPage OpenShowsPage()
+        public AllShowsPage OpenShowsPage()
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkShows))).Click();
-            return new ShowsPage(driver);
+            return new AllShowsPage(driver);
         }
 
         public MainNBCPage OpenEpisodesPage()

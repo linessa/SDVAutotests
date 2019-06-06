@@ -8,43 +8,45 @@ using System.Threading.Tasks;
 
 namespace SDVAutotests.Pages
 {
-    class ShowsPage : Page
+    class AllShowsPage : Page
     {
         private static string _lnkAllTab = "a[href='/shows/all']";
         private static string _lnkCurrentTab = "a[href='/shows/current']";
         private static string _lnkUpcomingTab = "a[href='/shows/upcoming']";
         private static string _lnkThrowbackTab = "a[href='/shows/classic-throwback']";
+        private static string _lnkAddToFavorite = "li.navigation__item__desktop-only a.navigation__item__link--favorite-add";
+        private static string _lnkCloseSingUpWindow = "span[href='#']";
 
-        public ShowsPage(IWebDriver driver) : base(driver) { }
+        public AllShowsPage(IWebDriver driver) : base(driver) { }
 
-        public ShowsPage OpenAllTab()
+        public AllShowsPage OpenAllTab()
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkAllTab))).Click();
             return this;
         }
 
-        public ShowsPage OpenCurrentTab()
+        public AllShowsPage OpenCurrentTab()
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkCurrentTab))).Click();
             return this;
         }
 
-        public ShowsPage OpenUpcomingTab()
+        public AllShowsPage OpenUpcomingTab()
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkUpcomingTab))).Click();
             return this;
         }
 
-        public ShowsPage OpenThrowbackTab()
+        public AllShowsPage OpenThrowbackTab()
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkThrowbackTab))).Click();
             return this;
         }
 
-        public ShowsPage ClickOnElementByText(string text)
+        public ShowPage ClickOnShowByText(string text)
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(text))).Click();
-            return this;
+            return new ShowPage(driver);
         }
 
         public bool IsElementsOnPageByText(string text)
