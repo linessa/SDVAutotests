@@ -13,7 +13,12 @@ namespace SDVAutotests.Pages
         {
             this.driver = driver;
             this.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
         }
+
+        public IWebElement WaitForElementPresent(By locator) =>
+            wait.Until(ExpectedConditions.ElementIsVisible(locator));
+
+        public bool IsElementDisplayed(By locator) =>
+            wait.Until((IWebDriver d) => driver.FindElements(locator).Count > 0);
     }
 }

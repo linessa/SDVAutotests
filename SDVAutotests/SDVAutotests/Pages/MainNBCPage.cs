@@ -29,43 +29,43 @@ namespace SDVAutotests.Pages
 
         public AllShowsPage OpenShowsPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkShows))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkShows)).Click();
             return new AllShowsPage(driver);
         }
 
         public MainNBCPage OpenEpisodesPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkEpisodes))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkEpisodes)).Click();
             return this;
         }
 
         public MainNBCPage OpenShedulePage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkShedule))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkShedule)).Click();
             return this;
         }
 
         public MainNBCPage OpenSportsPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_btnSports))).Click();
+            WaitForElementPresent(By.CssSelector(_btnSports)).Click();
             return this;
         }
 
         public MainNBCPage OpenShopPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkShop))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkShop)).Click();
             return this;
         }
 
         public MainNBCPage OpenAppPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkApp))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkApp)).Click();
             return this;
         }
 
         public MainNBCPage OpenSearchPage()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_btnSearch))).Click();
+            WaitForElementPresent(By.CssSelector(_btnSearch)).Click();
             return this;
         }
     }

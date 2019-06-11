@@ -18,38 +18,30 @@ namespace SDVAutotests.Pages
         private static string _btnLess = "span.bio__desc__more-text";
 
         private string _lnkActor(string text) => $"//span[contains(text(),'{text}')]/../../../../..";
-
-
-        
+               
 
         public ShowPage(IWebDriver driver) : base(driver) { }
 
         public ShowPage OpenCastTab()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkCastTab))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkCastTab)).Click();
             return this;
         }
 
-        //public ShowPage ClickOnElementByText(string text)
-        //{
-        //    wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(text))).Click();
-        //    return this;
-        //}
-
         public bool IsActorOnPageByName(string actorName)
         {
-            return wait.Until((IWebDriver d) => driver.FindElements(By.XPath(_lnkActor(actorName))).Count() > 0);
+            return IsElementDisplayed(By.XPath(_lnkActor(actorName)));
         }
 
         public ShowPage AddToFavorite()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkAddToFavorite))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkAddToFavorite)).Click();
             return this;
         }
 
         public ShowPage CloseSingUpWindow()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_lnkCloseSingUpWindow))).Click();
+            WaitForElementPresent(By.CssSelector(_lnkCloseSingUpWindow)).Click();
             return this;
         }
 
@@ -60,19 +52,19 @@ namespace SDVAutotests.Pages
 
         public ShowPage OpenAboutActor(string actorName)
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(_lnkActor(actorName)))).Click();
+            WaitForElementPresent(By.XPath(_lnkActor(actorName))).Click();
             return this;
         }
 
         public ShowPage ClickMoreButton()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(_btnMore))).Click();
+            WaitForElementPresent(By.CssSelector(_btnMore)).Click();
             return this;
         }
 
         public bool IsLessButtonDisplayed()
         {
-            return wait.Until((IWebDriver d) => driver.FindElements(By.CssSelector(_btnLess)).Count() > 0);
+            return IsElementDisplayed(By.CssSelector(_btnLess));
         }
     }
 }
